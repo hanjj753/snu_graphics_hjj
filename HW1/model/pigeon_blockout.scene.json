@@ -1,0 +1,2078 @@
+{
+  "format_version": 2,
+  "coordinate_system": {
+    "source": "Blender right-handed Z-up",
+    "target": "Pyglet/OpenGL right-handed Y-up",
+    "vector_mapping": "(x, y, z) -> (x, z, -y)",
+    "rotation": "ordered axis-angle steps in radians",
+    "transform_order": "translation @ rotation @ scale"
+  },
+  "source_blend": "D:\\Workspace\\Computer Graphics\\HW1\\pigeon_blockout.blend",
+  "warnings": [],
+  "nodes": [
+    {
+      "name": "Body",
+      "parent": null,
+      "geometry": "sphere",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          -0.2,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.349066,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          2.4,
+          1.35,
+          1.2
+        ]
+      },
+      "source": {
+        "blender_joint": "Body",
+        "blender_mesh": "BodyMesh",
+        "blender_data": "Sphere.003"
+      }
+    },
+    {
+      "name": "Neck",
+      "parent": "Body",
+      "geometry": "sphere",
+      "local_transform": {
+        "translation": [
+          0.75,
+          0.65,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": -0.523599,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.65,
+          1.1,
+          0.55
+        ]
+      },
+      "source": {
+        "blender_joint": "Neck",
+        "blender_mesh": "NeckMesh",
+        "blender_data": "Sphere.004"
+      }
+    },
+    {
+      "name": "Head",
+      "parent": "Neck",
+      "geometry": "sphere",
+      "local_transform": {
+        "translation": [
+          0.4,
+          0.5,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.95,
+          0.9,
+          0.9
+        ]
+      },
+      "source": {
+        "blender_joint": "Head",
+        "blender_mesh": "HeadMesh",
+        "blender_data": "Sphere.005"
+      }
+    },
+    {
+      "name": "Beak",
+      "parent": "Head",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.45,
+          -0.05,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": -0.139626,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.1,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.2,
+          0.15,
+          0.2
+        ]
+      },
+      "source": {
+        "blender_joint": "Beak",
+        "blender_mesh": "BeakMesh",
+        "blender_data": "Cube.002"
+      }
+    },
+    {
+      "name": "LeftEye",
+      "parent": "Head",
+      "geometry": "sphere",
+      "local_transform": {
+        "translation": [
+          0.18,
+          0.12,
+          0.43
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.16,
+          0.16,
+          0.08
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftEye",
+        "blender_mesh": "LeftEyeMesh",
+        "blender_data": "Sphere.006"
+      }
+    },
+    {
+      "name": "RightEye",
+      "parent": "Head",
+      "geometry": "sphere",
+      "local_transform": {
+        "translation": [
+          0.18,
+          0.12,
+          -0.43
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.16,
+          0.16,
+          0.08
+        ]
+      },
+      "source": {
+        "blender_joint": "RightEye",
+        "blender_mesh": "RightEyeMesh",
+        "blender_data": "Sphere.007"
+      }
+    },
+    {
+      "name": "LeftUpperWing",
+      "parent": "Body",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.1,
+          0.5
+        ],
+        "rotations": [
+          {
+            "angle": -0.087266,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.349066,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": -0.174533,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.4
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.75,
+          0.2,
+          0.8
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftUpperWing",
+        "blender_mesh": "LeftUpperWingMesh",
+        "blender_data": "Cube.003"
+      }
+    },
+    {
+      "name": "LeftLowerWing",
+      "parent": "LeftUpperWing",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.7
+        ],
+        "rotations": [
+          {
+            "angle": -0.261799,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": -0.349066,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.4
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.6,
+          0.12,
+          0.8
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftLowerWing",
+        "blender_mesh": "LeftLowerWingMesh",
+        "blender_data": "Cube.004"
+      }
+    },
+    {
+      "name": "LeftWingTip",
+      "parent": "LeftLowerWing",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.7
+        ],
+        "rotations": [
+          {
+            "angle": -0.174533,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": -0.174533,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.3
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.38,
+          0.1,
+          0.6
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftWingTip",
+        "blender_mesh": "LeftWingTipMesh",
+        "blender_data": "Cube.006"
+      }
+    },
+    {
+      "name": "RightUpperWing",
+      "parent": "Body",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.1,
+          -0.5
+        ],
+        "rotations": [
+          {
+            "angle": 0.087266,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.349066,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.174533,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          -0.4
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.75,
+          0.2,
+          0.8
+        ]
+      },
+      "source": {
+        "blender_joint": "RightUpperWing",
+        "blender_mesh": "RightUpperWingMesh",
+        "blender_data": "Cube.007"
+      }
+    },
+    {
+      "name": "RightLowerWing",
+      "parent": "RightUpperWing",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          -0.7
+        ],
+        "rotations": [
+          {
+            "angle": 0.2618,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.349066,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          -0.4
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.6,
+          0.12,
+          0.8
+        ]
+      },
+      "source": {
+        "blender_joint": "RightLowerWing",
+        "blender_mesh": "RightLowerWingMesh",
+        "blender_data": "Cube.008"
+      }
+    },
+    {
+      "name": "RightWingTip",
+      "parent": "RightLowerWing",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          -0.7
+        ],
+        "rotations": [
+          {
+            "angle": 0.174533,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          -0.3
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.174533,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.38,
+          0.1,
+          0.6
+        ]
+      },
+      "source": {
+        "blender_joint": "RightWingTip",
+        "blender_mesh": "RightWingTipMesh",
+        "blender_data": "Cube.009"
+      }
+    },
+    {
+      "name": "LeftUpperLeg",
+      "parent": "Body",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.15,
+          -0.55,
+          0.3
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          -0.18,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.16,
+          0.36,
+          0.16
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftUpperLeg",
+        "blender_mesh": "LeftUpperLegMesh",
+        "blender_data": "Cube.010"
+      }
+    },
+    {
+      "name": "LeftLowerLeg",
+      "parent": "LeftUpperLeg",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          -0.36,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          -0.2,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.14,
+          0.4,
+          0.14
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftLowerLeg",
+        "blender_mesh": "LeftLowerLegMesh",
+        "blender_data": "Cube.011"
+      }
+    },
+    {
+      "name": "LeftFoot",
+      "parent": "LeftLowerLeg",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.22,
+          -0.04,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.44,
+          0.1,
+          0.2
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftFoot",
+        "blender_mesh": "LeftFootMesh",
+        "blender_data": "Cube.012"
+      }
+    },
+    {
+      "name": "RightUpperLeg",
+      "parent": "Body",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.15,
+          -0.55,
+          -0.3
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          -0.18,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.16,
+          0.36,
+          0.16
+        ]
+      },
+      "source": {
+        "blender_joint": "RightUpperLeg",
+        "blender_mesh": "RightUpperLegMesh",
+        "blender_data": "Cube.013"
+      }
+    },
+    {
+      "name": "RightLowerLeg",
+      "parent": "RightUpperLeg",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          -0.36,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          -0.2,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.14,
+          0.4,
+          0.14
+        ]
+      },
+      "source": {
+        "blender_joint": "RightLowerLeg",
+        "blender_mesh": "RightLowerLegMesh",
+        "blender_data": "Cube.014"
+      }
+    },
+    {
+      "name": "RightFoot",
+      "parent": "RightLowerLeg",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.22,
+          -0.04,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.44,
+          0.1,
+          0.2
+        ]
+      },
+      "source": {
+        "blender_joint": "RightFoot",
+        "blender_mesh": "RightFootMesh",
+        "blender_data": "Cube.015"
+      }
+    },
+    {
+      "name": "LeftPrimaryFeather1",
+      "parent": "LeftWingTip",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.2,
+          -0.03,
+          0.38
+        ],
+        "rotations": [
+          {
+            "angle": 0.349066,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.7,
+          0.06,
+          0.16
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftPrimaryFeather1Mesh",
+        "blender_mesh": "LeftPrimaryFeather1Mesh",
+        "blender_data": "Cube.016"
+      }
+    },
+    {
+      "name": "LeftPrimaryFeather2",
+      "parent": "LeftWingTip",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.3,
+          -0.05,
+          0.35
+        ],
+        "rotations": [
+          {
+            "angle": 0.610865,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.76,
+          0.05,
+          0.15
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftPrimaryFeather2Mesh",
+        "blender_mesh": "LeftPrimaryFeather2Mesh",
+        "blender_data": "Cube.017"
+      }
+    },
+    {
+      "name": "LeftPrimaryFeather3",
+      "parent": "LeftWingTip",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.4,
+          -0.07,
+          0.28
+        ],
+        "rotations": [
+          {
+            "angle": 0.872665,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.82,
+          0.05,
+          0.14
+        ]
+      },
+      "source": {
+        "blender_joint": "LeftPrimaryFeather3Mesh",
+        "blender_mesh": "LeftPrimaryFeather3Mesh",
+        "blender_data": "Cube.018"
+      }
+    },
+    {
+      "name": "RightPrimaryFeather1",
+      "parent": "RightWingTip",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.2,
+          -0.03,
+          -0.38
+        ],
+        "rotations": [
+          {
+            "angle": -0.349066,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.7,
+          0.06,
+          0.16
+        ]
+      },
+      "source": {
+        "blender_joint": "RightPrimaryFeather1Mesh",
+        "blender_mesh": "RightPrimaryFeather1Mesh",
+        "blender_data": "Cube.019"
+      }
+    },
+    {
+      "name": "RightPrimaryFeather2",
+      "parent": "RightWingTip",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.3,
+          -0.05,
+          -0.35
+        ],
+        "rotations": [
+          {
+            "angle": -0.610865,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.76,
+          0.05,
+          0.15
+        ]
+      },
+      "source": {
+        "blender_joint": "RightPrimaryFeather2Mesh",
+        "blender_mesh": "RightPrimaryFeather2Mesh",
+        "blender_data": "Cube.020"
+      }
+    },
+    {
+      "name": "RightPrimaryFeather3",
+      "parent": "RightWingTip",
+      "geometry": "cube",
+      "local_transform": {
+        "translation": [
+          -0.4,
+          -0.07,
+          -0.28
+        ],
+        "rotations": [
+          {
+            "angle": -0.872665,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "shape_transform": {
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotations": [
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "angle": 0.0,
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scale": [
+          0.82,
+          0.05,
+          0.14
+        ]
+      },
+      "source": {
+        "blender_joint": "RightPrimaryFeather3Mesh",
+        "blender_mesh": "RightPrimaryFeather3Mesh",
+        "blender_data": "Cube.021"
+      }
+    }
+  ]
+}
