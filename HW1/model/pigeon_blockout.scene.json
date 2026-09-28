@@ -7,7 +7,7 @@
     "rotation": "ordered axis-angle steps in radians",
     "transform_order": "translation @ rotation @ scale"
   },
-  "source_blend": "D:\\Workspace\\Computer Graphics\\HW1\\pigeon_blockout.blend",
+  "source_blend": "D:\\Workspace\\Computer Graphics\\HW1\\model\\pigeon_blockout.blend",
   "warnings": [],
   "nodes": [
     {
@@ -257,9 +257,9 @@
           }
         ],
         "scale": [
-          0.95,
-          0.9,
-          0.9
+          0.6,
+          0.6,
+          0.6
         ]
       },
       "source": {
@@ -274,7 +274,7 @@
       "geometry": "cube",
       "local_transform": {
         "translation": [
-          0.45,
+          0.25,
           -0.05,
           0.0
         ],
@@ -344,8 +344,8 @@
         ],
         "scale": [
           0.2,
-          0.15,
-          0.2
+          0.075,
+          0.1
         ]
       },
       "source": {
@@ -360,9 +360,9 @@
       "geometry": "sphere",
       "local_transform": {
         "translation": [
-          0.18,
-          0.12,
-          0.43
+          0.1,
+          0.08,
+          0.27
         ],
         "rotations": [
           {
@@ -429,8 +429,8 @@
           }
         ],
         "scale": [
-          0.16,
-          0.16,
+          0.1,
+          0.1,
           0.08
         ]
       },
@@ -446,9 +446,9 @@
       "geometry": "sphere",
       "local_transform": {
         "translation": [
-          0.18,
-          0.12,
-          -0.43
+          0.1,
+          0.08,
+          -0.27
         ],
         "rotations": [
           {
@@ -515,8 +515,8 @@
           }
         ],
         "scale": [
-          0.16,
-          0.16,
+          0.1,
+          0.1,
           0.08
         ]
       },
@@ -532,9 +532,9 @@
       "geometry": "cube",
       "local_transform": {
         "translation": [
-          0.0,
-          0.1,
-          0.5
+          0.2,
+          0.3,
+          0.4
         ],
         "rotations": [
           {
@@ -546,7 +546,7 @@
             ]
           },
           {
-            "angle": 0.349066,
+            "angle": -0.349066,
             "axis": [
               0.0,
               0.0,
@@ -554,7 +554,7 @@
             ]
           },
           {
-            "angle": -0.174533,
+            "angle": 1.221731,
             "axis": [
               1.0,
               0.0,
@@ -565,7 +565,7 @@
         "scale": [
           1.0,
           1.0,
-          1.0
+          0.97
         ]
       },
       "shape_transform": {
@@ -640,7 +640,7 @@
             ]
           },
           {
-            "angle": -0.349066,
+            "angle": 0.0,
             "axis": [
               1.0,
               0.0,
@@ -726,7 +726,7 @@
             ]
           },
           {
-            "angle": -0.174533,
+            "angle": 0.0,
             "axis": [
               1.0,
               0.0,
@@ -790,13 +790,13 @@
       "geometry": "cube",
       "local_transform": {
         "translation": [
-          0.0,
-          0.1,
-          -0.5
+          0.2,
+          0.3,
+          -0.4
         ],
         "rotations": [
           {
-            "angle": 0.087266,
+            "angle": 0.087267,
             "axis": [
               0.0,
               1.0,
@@ -804,7 +804,7 @@
             ]
           },
           {
-            "angle": 0.349066,
+            "angle": -0.349066,
             "axis": [
               0.0,
               0.0,
@@ -812,7 +812,7 @@
             ]
           },
           {
-            "angle": 0.174533,
+            "angle": -1.221731,
             "axis": [
               1.0,
               0.0,
@@ -823,7 +823,7 @@
         "scale": [
           1.0,
           1.0,
-          1.0
+          0.97
         ]
       },
       "shape_transform": {
@@ -882,7 +882,7 @@
         ],
         "rotations": [
           {
-            "angle": 0.2618,
+            "angle": 0.261799,
             "axis": [
               0.0,
               1.0,
@@ -898,7 +898,7 @@
             ]
           },
           {
-            "angle": 0.349066,
+            "angle": 0.0,
             "axis": [
               1.0,
               0.0,
@@ -1022,7 +1022,7 @@
             ]
           },
           {
-            "angle": 0.174533,
+            "angle": 0.0,
             "axis": [
               1.0,
               0.0,

@@ -265,16 +265,14 @@ def _logical_parent_names(records: list[dict[str, Any]]) -> dict[str, str | None
 def _relative_local_matrix(anchor: Any, parent_anchor: Any | None) -> Matrix:
     """Compose Blender local transforms up to a logical parent.
 
-    EMPTY scale is intentionally discarded: EMPTY objects define animation
-    pivots, while visible size belongs in the paired mesh's shape transform.
+    EMPTY scale is preserved because Blender propagates it to the entire child
+    subtree. A mesh object's own scale is separated later into shape_transform.
     """
 
     parts: list[Matrix] = []
     current = anchor
     while current is not None and current != parent_anchor:
         local = current.matrix_local.copy()
-        if current.type == "EMPTY":
-            local = _without_scale(local)
         parts.append(local)
         current = current.parent
 
@@ -355,13 +353,17 @@ def export_scene(output_path: str | Path | None = None) -> Path:
         )
 
         relative_blender = _relative_local_matrix(anchor, parent_anchor)
-        local_blender = _without_scale(relative_blender)
 
         if anchor != mesh:
+            # The EMPTY's scale is a group transform in Blender, so it belongs
+            # in local_transform and must propagate to every descendant.
+            local_blender = relative_blender
             # The paired mesh is a direct child of its EMPTY pivot. Its entire
             # local T/R/S therefore belongs to the visible shape.
             shape_blender = mesh.matrix_local @ _bounding_box_transform(mesh)
         else:
+            # This scale belongs only to the visible standalone mesh.
+            local_blender = _without_scale(relative_blender)
             # An unpaired mesh acts as both joint and shape. Keep its T/R in
             # local_transform and move only its residual size into the shape.
             shape_blender = (

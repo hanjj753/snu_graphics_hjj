@@ -41,12 +41,14 @@ class Node :
 
 class RenderWindow(pyglet.window.Window) :
 
-    def __init__(self, geometry_list:list[Geometry], width=1280, height=720, caption="Pigeon", resizable=True) :
+    def __init__(self, geometry_list:list[Geometry], width=1280, height=720, caption="Window", resizable=True, camera_position=Vec3(3, 3, 3), background_color=(1.0, 1.0, 1.0, 1.0)) :
         super().__init__(width=width, height=height, caption=caption, resizable=resizable)
 
-        glClearColor(1.0, 1.0, 1.0, 1.0)
+        glClearColor(*background_color)
         glEnable(GL_DEPTH_TEST) # 겹쳤을 떄 앞에 있는 면을 남김
         glEnable(GL_CULL_FACE)  # 큐브 뒷면 그리지 않음
+
+        self.camera_position = camera_position
         self.camera_setup()
         self.elapsed_time = 0
 
@@ -71,7 +73,6 @@ class RenderWindow(pyglet.window.Window) :
     def camera_setup(self) :
 
         # Camera 셋업
-        self.camera_position = Vec3(3, 3, 3)
         self.camera_target = Vec3(0, 0, 0)
         self.camera_up = Vec3(0, 1, 0)
         self.view_matrix = Mat4.look_at(

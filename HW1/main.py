@@ -1,18 +1,21 @@
 from pyglet.math import Mat4, Vec3
+from math import pi, sin, cos
+
 from render import RenderWindow
-from primitives import CubeGeometry, SphereGeometry
-from math import pi
+from primitives import Geometry, CubeGeometry, SphereGeometry
 
 class PigeonWindow(RenderWindow) :
 
-    def __init__(self):
+    def __init__(self, width=1280, height=720, caption="Pigeon", resizable=True, camera_position=Vec3(3, 3, 3), background_color=(1.0, 1.0, 1.0, 1.0)):
 
         geo_list = [
             CubeGeometry(), 
             SphereGeometry(),
-            SphereGeometry(color=(200, 200, 200, 200))
+            SphereGeometry(color=(100, 100, 100, 200)), #회색
+            SphereGeometry(color=(50, 50, 50, 255)), # 짙은 회색,
+            CubeGeometry(color=(100, 100, 100, 255)),
         ]
-        super().__init__(geometry_list=geo_list)
+        super().__init__(geometry_list=geo_list, width=width, height=height, caption=caption, resizable=resizable, camera_position=camera_position, background_color=background_color)
 
         self.create_pigeon()
         self.save_default_pose()
@@ -20,9 +23,12 @@ class PigeonWindow(RenderWindow) :
         self.node_dict["root"].update_world()
 
     def create_pigeon(self) :
+        """
+        Blender에서 작업한 뒤에 숫자 보고 노가다 뛰면 될 듯
+        """
 
         self.add_node(
-            geo_index=1,
+            geo_index=3,
             name='Body',
             parent='root',
             local_transform=Mat4(),
@@ -45,11 +51,11 @@ class PigeonWindow(RenderWindow) :
         )
 
         self.add_node(
-            geo_index=2,
+            geo_index=1,
             name='Head',
             parent='Neck',
             local_transform=Mat4.from_translation(Vec3(0.4, 0.5, 0.0)),
-            shape_transform=Mat4.from_scale(Vec3(0.95, 0.9, 0.9)),
+            shape_transform=Mat4.from_scale(Vec3(0.6, 0.6, 0.6)),
         )
 
         self.add_node(
@@ -57,29 +63,29 @@ class PigeonWindow(RenderWindow) :
             name='Beak',
             parent='Head',
             local_transform=(
-                Mat4.from_translation(Vec3(0.45, -0.05, 0.0))
+                Mat4.from_translation(Vec3(0.25, -0.05, 0.0))
                 @ Mat4.from_rotation(-0.05 * pi, Vec3(0.0, 0.0, 1.0))
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.1, 0.0, 0.0))
-                @ Mat4.from_scale(Vec3(0.2, 0.15, 0.2))
+                @ Mat4.from_scale(Vec3(0.2, 0.075, 0.1))
             ),
         )
 
         self.add_node(
-            geo_index=1,
+            geo_index=3,
             name='LeftEye',
             parent='Head',
-            local_transform=Mat4.from_translation(Vec3(0.18, 0.12, 0.43)),
-            shape_transform=Mat4.from_scale(Vec3(0.16, 0.16, 0.08)),
+            local_transform=Mat4.from_translation(Vec3(0.1, 0.08, 0.27)),
+            shape_transform=Mat4.from_scale(Vec3(0.1, 0.1, 0.08)),
         )
 
         self.add_node(
-            geo_index=1,
+            geo_index=3,
             name='RightEye',
             parent='Head',
-            local_transform=Mat4.from_translation(Vec3(0.18, 0.12, -0.43)),
-            shape_transform=Mat4.from_scale(Vec3(0.16, 0.16, 0.08)),
+            local_transform=Mat4.from_translation(Vec3(0.1, 0.08, -0.27)),
+            shape_transform=Mat4.from_scale(Vec3(0.1, 0.1, 0.08)),
         )
 
         self.add_node(
@@ -87,10 +93,11 @@ class PigeonWindow(RenderWindow) :
             name='LeftUpperWing',
             parent='Body',
             local_transform=(
-                Mat4.from_translation(Vec3(0.0, 0.1, 0.5))
+                Mat4.from_translation(Vec3(0.2, 0.3, 0.4))
                 @ Mat4.from_rotation(-0.05 * pi, Vec3(0.0, 1.0, 0.0))
-                @ Mat4.from_rotation(0.1 * pi, Vec3(0.0, 0.0, 1.0))
-                @ Mat4.from_rotation(-0.05 * pi, Vec3(1.0, 0.0, 0.0))
+                @ Mat4.from_rotation(-0.1 * pi, Vec3(0.0, 0.0, 1.0))
+                @ Mat4.from_rotation(0.4 * pi, Vec3(1.0, 0.0, 0.0))
+                @ Mat4.from_scale(Vec3(1.0, 1.0, 0.97))
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, 0.4))
@@ -105,7 +112,6 @@ class PigeonWindow(RenderWindow) :
             local_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, 0.7))
                 @ Mat4.from_rotation(-0.1 * pi, Vec3(0.0, 1.0, 0.0))
-                @ Mat4.from_rotation(-0.1 * pi, Vec3(1.0, 0.0, 0.0))
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, 0.4))
@@ -120,7 +126,6 @@ class PigeonWindow(RenderWindow) :
             local_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, 0.7))
                 @ Mat4.from_rotation(-0.05 * pi, Vec3(0.0, 1.0, 0.0))
-                @ Mat4.from_rotation(-0.05 * pi, Vec3(1.0, 0.0, 0.0))
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, 0.3))
@@ -133,10 +138,11 @@ class PigeonWindow(RenderWindow) :
             name='RightUpperWing',
             parent='Body',
             local_transform=(
-                Mat4.from_translation(Vec3(0.0, 0.1, -0.5))
+                Mat4.from_translation(Vec3(0.2, 0.3, -0.4))
                 @ Mat4.from_rotation(0.05 * pi, Vec3(0.0, 1.0, 0.0))
-                @ Mat4.from_rotation(0.1 * pi, Vec3(0.0, 0.0, 1.0))
-                @ Mat4.from_rotation(0.05 * pi, Vec3(1.0, 0.0, 0.0))
+                @ Mat4.from_rotation(-0.1 * pi, Vec3(0.0, 0.0, 1.0))
+                @ Mat4.from_rotation(-0.4 * pi, Vec3(1.0, 0.0, 0.0))
+                @ Mat4.from_scale(Vec3(1.0, 1.0, 0.97))
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, -0.4))
@@ -151,7 +157,6 @@ class PigeonWindow(RenderWindow) :
             local_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, -0.7))
                 @ Mat4.from_rotation(0.1 * pi, Vec3(0.0, 1.0, 0.0))
-                @ Mat4.from_rotation(0.1 * pi, Vec3(1.0, 0.0, 0.0))
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, -0.4))
@@ -169,13 +174,12 @@ class PigeonWindow(RenderWindow) :
             ),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, 0.0, -0.3))
-                @ Mat4.from_rotation(0.05 * pi, Vec3(1.0, 0.0, 0.0))
                 @ Mat4.from_scale(Vec3(0.38, 0.1, 0.6))
             ),
         )
 
         self.add_node(
-            geo_index=0,
+            geo_index=4,
             name='LeftUpperLeg',
             parent='Body',
             local_transform=Mat4.from_translation(Vec3(-0.15, -0.55, 0.3)),
@@ -186,7 +190,7 @@ class PigeonWindow(RenderWindow) :
         )
 
         self.add_node(
-            geo_index=0,
+            geo_index=4,
             name='LeftLowerLeg',
             parent='LeftUpperLeg',
             local_transform=Mat4.from_translation(Vec3(0.0, -0.36, 0.0)),
@@ -208,7 +212,7 @@ class PigeonWindow(RenderWindow) :
         )
 
         self.add_node(
-            geo_index=0,
+            geo_index=4,
             name='RightUpperLeg',
             parent='Body',
             local_transform=Mat4.from_translation(Vec3(-0.15, -0.55, -0.3)),
@@ -219,7 +223,7 @@ class PigeonWindow(RenderWindow) :
         )
 
         self.add_node(
-            geo_index=0,
+            geo_index=4,
             name='RightLowerLeg',
             parent='RightUpperLeg',
             local_transform=Mat4.from_translation(Vec3(0.0, -0.36, 0.0)),
@@ -310,9 +314,27 @@ class PigeonWindow(RenderWindow) :
         self.default_pose = { name: node.local_transform for name, node in self.node_dict.items() }
 
     def animate(self, dt) :
-        pass
+        """
+        애니메이션 구현 계획
+
+        0~2초 : (제자리에서) 걷기
+        - RightUpperLeg, LeftUpperLeg z축 기준 회전시키면 됨
+        - 움직이게 할 거면 body 자체를 translation을 주면 될 듯
+        2~4초 : 바닥 쪼기
+        4~6초 : 날개 퍼덕이기
+        - 날개 필 때 x축 기준으로도 돌려야 하는데 z축 기준으로도 조금 돌려야 자연스러울 듯
+        """
+        x_axis = Vec3(1, 0, 0)
+        y_axis = Vec3(0, 1, 0)
+        z_axis = Vec3(0, 0, 1)
+
+        leg_angle = 0.4 * sin(2 * self.elapsed_time) # 주기 2pi ~ 3초
+        self.node_dict["RightUpperLeg"].local_transform = self.default_pose["RightUpperLeg"] @ Mat4.from_rotation(leg_angle, z_axis)
+        self.node_dict["LeftUpperLeg"].local_transform = self.default_pose["LeftUpperLeg"] @ Mat4.from_rotation(-leg_angle, z_axis)
+
+        
 
 if __name__ == "__main__" :
 
-    window = PigeonWindow()
+    window = PigeonWindow(camera_position=Vec3(3, 1, -8), background_color=(0.15, 0.18, 0.25, 1))
     window.run()
