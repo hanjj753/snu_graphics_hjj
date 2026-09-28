@@ -1,5 +1,5 @@
 from pyglet.math import Mat4, Vec3
-from math import pi, sin, cos
+from math import pi, sin, cos, hypot, atan2
 
 from render import RenderWindow
 from primitives import Geometry, CubeGeometry, SphereGeometry
@@ -181,7 +181,7 @@ class PigeonWindow(RenderWindow) :
         self.add_node(
             geo_index=4,
             name='LeftUpperLeg',
-            parent='Body',
+            parent='root',
             local_transform=Mat4.from_translation(Vec3(-0.15, -0.55, 0.3)),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, -0.18, 0.0))
@@ -214,7 +214,7 @@ class PigeonWindow(RenderWindow) :
         self.add_node(
             geo_index=4,
             name='RightUpperLeg',
-            parent='Body',
+            parent='root',
             local_transform=Mat4.from_translation(Vec3(-0.15, -0.55, -0.3)),
             shape_transform=(
                 Mat4.from_translation(Vec3(0.0, -0.18, 0.0))
@@ -312,6 +312,7 @@ class PigeonWindow(RenderWindow) :
         
     def save_default_pose(self) :
         self.default_pose = { name: node.local_transform for name, node in self.node_dict.items() }
+        self.default_shape = { name: node.shape_transform for name, node in self.node_dict.items() }
 
     def animate(self, dt) :
         """
@@ -328,13 +329,42 @@ class PigeonWindow(RenderWindow) :
         y_axis = Vec3(0, 1, 0)
         z_axis = Vec3(0, 0, 1)
 
-        leg_angle = 0.4 * sin(2 * self.elapsed_time) # 주기 2pi ~ 3초
-        self.node_dict["RightUpperLeg"].local_transform = self.default_pose["RightUpperLeg"] @ Mat4.from_rotation(leg_angle, z_axis)
-        self.node_dict["LeftUpperLeg"].local_transform = self.default_pose["LeftUpperLeg"] @ Mat4.from_rotation(-leg_angle, z_axis)
+        if self.elapsed_time < 2 : # 걷기
 
+            body_move = 0.5 * self.elapsed_time
+            body_bob = 0.01 * abs(sin(pi * self.elapsed_time))
+            self.node_dict["Body"].local_transform = self.default_pose["Body"] @ Mat4.from_translation(Vec3(body_move, body_bob, 0))
+
+            leg_angle = 0.4 * sin(2*pi * self.elapsed_time) # 주기 1초
+            self.node_dict["RightUpperLeg"].local_transform = self.default_pose["RightUpperLeg"] @ Mat4.from_translation(Vec3(body_move, 0, 0)) @ Mat4.from_rotation(leg_angle, z_axis)
+            self.node_dict["LeftUpperLeg"].local_transform = self.default_pose["LeftUpperLeg"] @ Mat4.from_translation(Vec3(body_move, 0, 0)) @ Mat4.from_rotation(-leg_angle, z_axis)
+
+        elif self.elapsed_time < 3 :
+
+            body_angle = 0.3*pi * sin(0.5*pi * self.elapsed_time) # pi/2까지 도달하는데 1초
+            self.node_dict["Body"].local_transform = self.default_pose["Body"] @ Mat4.from_translation(Vec3(1, 0, 0)) @ Mat4.from_rotation(body_angle, z_axis)
+
+            neck_angle = 0.1*pi * sin(0.5*pi * self.elapsed_time)
+            self.node_dict["Neck"].local_transform = Mat4.from_rotation(neck_angle, Vec3(0, 0, 1)) @ self.default_pose["Neck"]
+
+        elif self.elapsed_time < 4 :
+
+            head_bob = 0.1 * abs(sin(4*pi * self.elapsed_time))
+            self.node_dict["Head"].local_transform = self.default_pose["Head"] @ Mat4.from_translation(Vec3(head_bob, 0, 0))
+
+        elif self.elapsed_time < 5 :
+
+            body_angle = -0.3*pi * cos(0.5*pi * self.elapsed_time) # pi/2까지 도달하는데 1초
+            self.node_dict["Body"].local_transform = self.default_pose["Body"] @ Mat4.from_translation(Vec3(1, 0, 0)) @ Mat4.from_rotation(body_angle, z_axis)
+
+            neck_angle = -0.1*pi * cos(0.5*pi * self.elapsed_time)
+            self.node_dict["Neck"].local_transform = Mat4.from_rotation(neck_angle, Vec3(0, 0, 1)) @ self.default_pose["Neck"]
+
+        elif self.elapsed_time < 6 :
+            pass
         
 
 if __name__ == "__main__" :
 
-    window = PigeonWindow(camera_position=Vec3(3, 1, -8), background_color=(0.15, 0.18, 0.25, 1))
+    window = PigeonWindow(camera_position=Vec3(0, 0, -8), background_color=(0.15, 0.18, 0.25, 1))
     window.run()
