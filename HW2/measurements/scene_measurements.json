@@ -1,0 +1,77 @@
+{
+  "units": "millimetres",
+  "recommended_scene_units_per_mm": 0.01,
+  "coordinate_system": {
+    "origin": "interior floor front-left corner",
+    "x": "right",
+    "y": "up",
+    "z": "toward back wall"
+  },
+  "cornell_box": {
+    "interior_size_xyz": [290.0, 300.0, 300.0],
+    "panel_thickness": 5.0,
+    "colours": {
+      "floor": "white",
+      "ceiling": "white",
+      "back": "white",
+      "left": "red",
+      "right": "green"
+    }
+  },
+  "camera": {
+    "position_xyz": [145.0, 150.0, -500.0],
+    "target_xyz": [145.0, 150.0, 300.0],
+    "up_xyz": [0.0, 1.0, 0.0],
+    "vertical_fov_degrees_initial": 60.8,
+    "photo": {
+      "device": "Samsung Galaxy Tab S9",
+      "resolution_pixels": [4128, 3096],
+      "megapixels_label": 13,
+      "iso": 1600,
+      "focal_length_35mm_equivalent_mm_assumed": 23.0,
+      "exposure_compensation_ev": 0.0,
+      "aperture_f_number": 2.0,
+      "exposure_time_seconds": 0.0416666667
+    }
+  },
+  "light": {
+    "type": "square ceiling opening illuminated by phone screen",
+    "centre_xyz": [145.0, 300.0, 150.0],
+    "size_xz": [60.0, 60.0]
+  },
+  "objects": {
+    "chocopie_box": {
+      "type": "cuboid",
+      "footprint_dimensions": [60.0, 210.0],
+      "height": 250.0,
+      "pivot_floor_xz": [210.0, 50.0],
+      "short_edge_angle_degrees_from_positive_x": 30.0,
+      "long_edge_angle_degrees_from_positive_x": 120.0,
+      "floor_corners_xz": [
+        [210.0, 50.0],
+        [261.961524, 80.0],
+        [105.0, 231.865335],
+        [156.961524, 261.865335]
+      ],
+      "footprint_centre_xz": [183.480762, 155.932667],
+      "textured": false
+    },
+    "cup": {
+      "type": "vertical conical frustum",
+      "floor_centre_xz": [80.0, 180.0],
+      "top_diameter": 70.0,
+      "bottom_diameter": 60.0,
+      "height": 65.0,
+      "water_height": 35.0
+    },
+    "torus": {
+      "floor_centre_xz": [50.0, 60.0],
+      "outer_diameter": 70.0,
+      "inner_diameter": 35.0,
+      "height": 17.5,
+      "major_radius": 26.25,
+      "minor_radius": 8.75,
+      "centre_xyz": [50.0, 8.75, 60.0]
+    }
+  }
+}
